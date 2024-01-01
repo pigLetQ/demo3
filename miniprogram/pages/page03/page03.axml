@@ -1,0 +1,20 @@
+<container
+  className="container">
+  <list-item style="font-size:30px">
+    {{nickname}}
+    <avatar
+      slot="image"
+      src="{{avatar}}" />
+  </list-item>
+</container>
+
+<button
+  open-type="getAuthorize"
+  scope="userInfo"
+  onGetAuthorize="getOpenUserInfo"
+  onError="handleAuthError"
+  type="primary"
+  disabled ={{isLogin}}
+>
+  {{button_content}}
+</button>

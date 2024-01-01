@@ -1,0 +1,62 @@
+<view class="container" >
+  <ant-input
+    placeholder="查找地点"
+    onChange="onChange"
+    className="search-bar"
+    focusClassName="search-bar-focus"
+    confirm-type="search"
+    allowClear
+    onConfirm="onConfirm">
+    <icon
+      slot="prefix"
+      type="SearchOutline" />
+  </ant-input>
+  <view class="cancel" onTap="cancel">取消</view>
+</view>
+
+<view hidden ={{showList}}>
+  <list
+  radius={{false}}>
+  <list-item
+    data-info="0" 
+    onTap="handleTap">
+    {{search_ifo.length === 0?"未找相关信息":search_ifo[0].name}}
+  </list-item>
+  <list-item a:if={{search_ifo.length >= 2}}
+    data-info="1" 
+    onTap="handleTap">
+    {{search_ifo[1].name}}
+  </list-item>
+  <list-item a:if={{search_ifo.length >= 3}}
+    data-info="2" 
+    onTap="handleTap">
+    {{search_ifo[2].name}}
+  </list-item>
+  <list-item a:if={{search_ifo.length >= 4}}
+    data-info="3" 
+    onTap="handleTap">
+    {{search_ifo[3].name}}
+  </list-item>
+  <list-item a:if={{search_ifo.length >= 5}}
+    data-info="4" 
+    onTap="handleTap">
+    {{search_ifo[4].name}}
+  </list-item>
+</list>
+</view>
+
+<view>
+    <map
+      id="map"
+      class="map_css"
+      longitude="{{longitude}}"
+      latitude="{{latitude}}"
+      scale="{{scale}}"
+      enable-zoom
+      show-scale  
+      onCalloutTap = tapLabel
+      onMarkerTap = tapLabel
+      onTap = cancel
+      >
+    </map>
+</view>

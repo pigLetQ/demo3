@@ -1,0 +1,19 @@
+{
+  "usingComponents": {
+    "container": "antd-mini/es/Container/index",
+    "tabs": "antd-mini/es/Tabs/index",
+    "badge": "antd-mini/es/Badge/index",
+    "icon": "antd-mini/es/Icon/index",
+    "empty": "antd-mini/es/Empty/index",
+    "button": "antd-mini/es/Button/index",
+    "ant-popup": "antd-mini/es/Popup/index",
+    "ant-button": "antd-mini/es/Button/index",
+    "list": "antd-mini/es/List/index",
+    "list-item": "antd-mini/es/List/ListItem/index",
+    "switch": "antd-mini/es/Switch/index",
+    "ant-icon": "antd-mini/es//Icon/index",
+    "modal": "antd-mini/es/Modal/index"
+  },
+  "styleIsolation": "apply-shared",
+  "defaultTitle": "留言板"
+}

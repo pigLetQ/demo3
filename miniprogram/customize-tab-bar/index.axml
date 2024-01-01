@@ -1,0 +1,6 @@
+<container style="margin-bottom:0; height:140rpx">
+    <tab-bar
+      items="{{tabs}}"
+      current="{{current}}"
+      onChange="handleChange"/>
+  </container>

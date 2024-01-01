@@ -1,0 +1,83 @@
+<view hidden = {{!isEmpty}}>
+  <empty
+    title="还没有人留言"
+    message="点击创建第一条留言"
+    style="margin: auto">
+    <view slot="extra">
+      <button
+        type="primary"
+        size="small"
+        inline
+        style="margin-left: 12px"
+        onTap=creatMessage>
+        创建
+      </button>
+    </view>
+  </empty>
+</view>
+
+<modal
+  title="您还未登录"
+  content="是否现在登录？"
+  visible="{{showmodal1}}"
+  primaryButtonText="登录"
+  secondaryButtonText="返回"
+  onPrimaryButtonTap="handlePrimaryButtonTap_1"
+  onSecondaryButtonTap="handleSecondaryButtonTap_1" />
+
+<modal
+  title="您还未选择地点"
+  content="是否现在选择？"
+  visible="{{showmodal2}}"
+  primaryButtonText="选择地点"
+  secondaryButtonText="返回"
+  onPrimaryButtonTap="handlePrimaryButtonTap_2"
+  onSecondaryButtonTap="handleSecondaryButtonTap_2" />
+
+<ant-popup
+  visible="{{ closeVisible }}"
+  height="{{ 600 }}"
+  position="bottom"
+  animation="{{ true }}">
+<view style="height:100%">
+  <form onSubmit="bindFormSubmit" style="height:100%">
+    <textarea name="textarea"placeholder="欢迎留下你的想法~" maxlength="-1"/>
+    <button form-type="reset" type="default" size="small" inline
+    style="margin-left: 180rpx; margin-bottom: 0">清除</button>
+    <button onTap="cancelMessage" type="default" size="small" inline
+    style="margin-left: 50rpx; margin-bottom: 0">取消</button>
+    <button form-type="submit" type="primary" size="small" inline
+    style="margin-left: 50rpx; margin-bottom: 0">提交</button>
+  </form>
+</view>
+</ant-popup>
+
+<view hidden = {{isEmpty}} style="margin-bottom: 140rpx">
+  <scroll-view scroll-y={{true}}>
+    <view a:for="{{list}}">
+      <container>
+        <view slot="title">
+          <view style="display: flex">
+          <image mode="scaleToFill" src={{item.avatar}} 
+            style="width: 40px; height: 40px; line-height: 1;"/>
+          <view style="margin-left:10px;margin-top:10px">
+            {{item.nickName}}
+          </view>
+          </view>
+        </view>
+        <view slot="headerRight">{{item.time}}</view>
+        <view class="content" />{{item.content}}
+      </container>
+    </view>
+    
+    <view class="btn" >
+      <ant-button
+      type="primary"
+      inline
+      onTap=creatMessage>
+      新增
+    </ant-button>
+    </view>
+  </scroll-view>
+  
+</view>

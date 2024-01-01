@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "styleIsolation": "apply-shared",
+  "usingComponents": {
+    "container": "antd-mini/es/Container/index",
+    "tab-bar": "antd-mini/es/TabBar/index"
+  }
+}
